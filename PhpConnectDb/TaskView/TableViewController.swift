@@ -45,6 +45,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.rowHeight = 40
         View1.layer.cornerRadius = 10
         View1.layer.masksToBounds = true
+        downloadItems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,10 +53,11 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.present(alertController,animated:true,completion:{Timer.scheduledTimer(withTimeInterval: 0.5, repeats:false, block: {_ in
             self.dismiss(animated: true, completion: nil)
         })})
-        downloadItems()
-
+      
+      
     }
-
+    
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Update.count
     }
@@ -94,14 +96,13 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     @IBAction func Add(_ sender: Any) {
-        
+        Update.removeAll()
         var textField = UITextField()
         if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
                 let alert = UIAlertController(title: "Add your Task", message: "", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "Add", style: UIAlertAction.Style.default) { [self](action) in
                     let alertController = UIAlertController(title: "Task", message: "Task Added", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
-                    
                     // namo link sever "http://con.test:8888/Task.php"
                     
                     let request = NSMutableURLRequest(url: NSURL(string: "https://appstudio.co/iOS/Task.php")! as URL)
@@ -123,17 +124,13 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                         print("response = \(String(describing: response))")
                         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                         print("responseString = \(String(describing: responseString))")
+                        downloadItems()
                     }
                     task.resume()
                     
-                    
-                   Update.append(UpdateData(TaskName: textField.text, TaskStatus: "Pending", Start_Date: StartDateField.text,End_Date: EndDateField.text))
-
-                    Update.removeAll()
-                    downloadItems()
-                    tableView.reloadData()
+//                   Update.append(UpdateData(TaskName: textField.text, TaskStatus: "Pending", Start_Date: StartDateField.text,End_Date: EndDateField.text))
                     self.present(alertController, animated: true, completion: nil)
-                   
+                    tableView.reloadData()
 
                     }
                 let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
@@ -536,9 +533,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         didselectEndDate = "\(Update[indexPath.row].End_Date as! String)"
         print("UpdateFunction \(Int16(Update[indexPath.row].Id as! String) as! Int16)")
         if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
-            Update.removeAll()
-            downloadItems()
-
+            
                 let alert = UIAlertController(title: "Edit", message: "", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "update", style: UIAlertAction.Style.default) { [self](action) in
                     let alertController = UIAlertController(title: "Edit", message: "Updation Done", preferredStyle: UIAlertController.Style.alert)
