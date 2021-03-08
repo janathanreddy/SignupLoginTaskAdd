@@ -9,6 +9,7 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Edit: UIButton!
     @IBOutlet weak var RemainDays: UILabel!
     @IBOutlet weak var StartDate: UILabel!
     @IBOutlet weak var EndDate: UILabel!

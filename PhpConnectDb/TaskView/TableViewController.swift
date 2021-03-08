@@ -67,7 +67,9 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         tableView.rowHeight = 104
         TableViewCell.Task1.text = Update[indexPath.row].TaskName
         TableViewCell.Button.tag = indexPath.row
+        TableViewCell.Edit.tag = indexPath.row
         TableViewCell.Button.addTarget(self, action: #selector(CellButton(sender:)), for:.touchUpInside )
+        TableViewCell.Edit.addTarget(self, action: #selector(EditButton(sender:)), for:.touchUpInside )
         TableViewCell.StartDate.text = Update[indexPath.row].Start_Date
         TableViewCell.EndDate.text = Update[indexPath.row].End_Date
         
@@ -186,7 +188,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         
     }
     
-    
+   
   
     @objc func doneselect1(){
         let dateformat=DateFormatter()
@@ -209,114 +211,111 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             self.view.endEditing(true)
 
         }
-    @objc func CellEditButton(sender:UIButton){
+    @objc func EditButton(sender:UIButton){
+        print("Edit Button Tapped")
         let tag = sender.tag
         let indexPath = IndexPath(row: tag, section: 0)
 
                 
-//                didselect?.removeAll()
-                oldTaskname?.removeAll()
-                var textField = UITextField()
-                
-                didselect = "\(Update[indexPath.row].TaskName as! String)"
-                didselectStartDate = "\(Update[indexPath.row].Start_Date as! String)"
-                didselectEndDate = "\(Update[indexPath.row].End_Date as! String)"
-                print("UpdateFunction \(Int16(Update[indexPath.row].Id as! String) as! Int16)")
-                if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
+        oldTaskname?.removeAll()
+        var textField = UITextField()
+        
+        didselect = "\(Update[indexPath.row].TaskName as! String)"
+        didselectStartDate = "\(Update[indexPath.row].Start_Date as! String)"
+        didselectEndDate = "\(Update[indexPath.row].End_Date as! String)"
+        print("UpdateFunction \(Int16(Update[indexPath.row].Id as! String) as! Int16)")
+
+        if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
+
+                let alert = UIAlertController(title: "Edit", message: "", preferredStyle: UIAlertController.Style.alert)
+                let action = UIAlertAction(title: "update", style: UIAlertAction.Style.default) { [self](action) in
+                    let alertController = UIAlertController(title: "Edit", message: "Updation Done", preferredStyle: UIAlertController.Style.alert)
+                    alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
+                    
+                    // namo link sever "http://con.test:8888/Task.php"
+                    
+                    let request = NSMutableURLRequest(url: NSURL(string: "https://appstudio.co/iOS/Edit.php")! as URL)
+                    request.httpMethod = "POST"
+                    let postString = "username=\(mail_Add as! String)&TaskName=\(textField.text as! String)&TaskStatus=\(Update[indexPath.row].TaskStatus as! String)&Id=\(Int16(Update[indexPath.row].Id as! String) as! Int16)&date=\(StartDateField1.text!)&End_Date=\(EndDateField1.text!)"
+                    print("postString : \(postString)")
                     Update.removeAll()
-                    downloadItems()
 
-                        let alert = UIAlertController(title: "Edit", message: "", preferredStyle: UIAlertController.Style.alert)
-                        let action = UIAlertAction(title: "update", style: UIAlertAction.Style.default) { [self](action) in
-                            let alertController = UIAlertController(title: "Edit", message: "Updation Done", preferredStyle: UIAlertController.Style.alert)
-                            alertController.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default,handler: nil))
-                            
-                            // namo link sever "http://con.test:8888/Task.php"
-                            
-                            let request = NSMutableURLRequest(url: NSURL(string: "https://appstudio.co/iOS/Edit.php")! as URL)
-                            request.httpMethod = "POST"
-                            let postString = "username=\(mail_Add as! String)&TaskName=\(textField.text as! String)&TaskStatus=\(Update[indexPath.row].TaskStatus as! String)&Id=\(Int16(Update[indexPath.row].Id as! String) as! Int16)&date=\(StartDateField1.text!)&End_Date=\(EndDateField1.text!)"
-                            print("postString : \(postString)")
+                    request.httpBody = postString.data(using: String.Encoding.utf8)
 
-                            request.httpBody = postString.data(using: String.Encoding.utf8)
+                    let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                        data, response, error in
 
-                            let task = URLSession.shared.dataTask(with: request as URLRequest) {
-                                data, response, error in
-
-                                if error != nil {
-                                    print("error=\(String(describing: error))")
-                                    return
-                                }
-                                print("response = \(String(describing: response))")
-                                let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                                print("responseString = \(String(describing: responseString))")
-                            }
-                            task.resume()
-                            
-                            self.present(alertController, animated: true, completion: nil)
-                            Update.removeAll()
-                            downloadItems()
-                            tableView.reloadData()
-                            }
-                        let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
-                            }
-                    
-                    
-                    
-                    
-                    alert.addTextField { [self] (alertTextField) in
-                              alertTextField.placeholder = "Edit Task"
-                        alertTextField.text = didselect
-                              textField = alertTextField
-                            }
-                    
-                    alert.addTextField { [self] (textField) in
-                        let toolbar=UIToolbar()
-                        toolbar.sizeToFit()
-                    self.StartDatePicker1 = UIDatePicker(frame:CGRect(x: 0, y: self.view.frame.size.height - 220, width:self.view.frame.size.width, height: 50))
-                    self.StartDatePicker1.backgroundColor = UIColor.white
-                        datePicker.datePickerMode = .date
-                        let done=UIBarButtonItem(barButtonSystemItem: .done, target:nil, action:#selector(start))
-                        toolbar.setItems([done], animated: false)
-                        textField.inputAccessoryView=toolbar
-                        textField.inputView=StartDatePicker1
-                        textField.placeholder = "Edit Start Task Date"
-                        textField.text = didselectStartDate
-                        StartDatePicker1.datePickerMode = .date
-                        StartDateField1 = textField
-
+                        if error != nil {
+                            print("error=\(String(describing: error))")
+                            return
                         }
+                        print("response = \(String(describing: response))")
+                        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                        print("responseString = \(String(describing: responseString))")
+                        downloadItems()
+
+                    }
+                    task.resume()
                     
-                    alert.addTextField { [self] (textField) in
-                        let toolbar=UIToolbar()
-
-                        toolbar.sizeToFit()
-                        self.EndDatePicker1 = UIDatePicker(frame:CGRect(x: 0, y: self.view.frame.size.height - 220, width:self.view.frame.size.width, height: 50))
-                        self.EndDatePicker1.backgroundColor = UIColor.systemGray6
-                        datePicker.datePickerMode = .date
-                        let done=UIBarButtonItem(barButtonSystemItem: .done, target:nil, action:#selector(end))
-                        toolbar.setItems([done], animated: false)
-                        textField.inputAccessoryView=toolbar
-                        textField.inputView=EndDatePicker1
-                        textField.text = didselectEndDate
-                        textField.placeholder = "Edit End Task Date"
-                        EndDatePicker1.datePickerMode = .date
-                        EndDateField1 = textField
-                        }
-                            alert.addAction(action)
-                    alert.addAction(cancel)
-                            present(alert, animated: true, completion: nil)
-                }else{
-                    let alert = UIAlertController(title: "Alert", message: "Fill All Fields", preferredStyle: UIAlertController.Style.alert)
-                    let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
-                        }
-                    alert.addAction(cancel)
-                    present(alert, animated: true, completion: nil)
-                }
-
-
-                
+                    self.present(alertController, animated: true, completion: nil)
+                    tableView.reloadData()
+                    }
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                    }
             
+            
+            
+            
+            alert.addTextField { [self] (alertTextField) in
+                      alertTextField.placeholder = "Edit Task"
+                alertTextField.text = didselect
+                      textField = alertTextField
+                    }
+            
+            alert.addTextField { [self] (textField) in
+                let toolbar=UIToolbar()
+                toolbar.sizeToFit()
+            self.StartDatePicker1 = UIDatePicker(frame:CGRect(x: 0, y: self.view.frame.size.height - 220, width:self.view.frame.size.width, height: 50))
+            self.StartDatePicker1.backgroundColor = UIColor.white
+                datePicker.datePickerMode = .date
+                let done=UIBarButtonItem(barButtonSystemItem: .done, target:nil, action:#selector(start))
+                toolbar.setItems([done], animated: false)
+                textField.inputAccessoryView=toolbar
+                textField.inputView=StartDatePicker1
+                textField.placeholder = "Edit Start Task Date"
+                textField.text = didselectStartDate
+                StartDatePicker1.datePickerMode = .date
+                StartDateField1 = textField
+
+                }
+            
+            alert.addTextField { [self] (textField) in
+                let toolbar=UIToolbar()
+
+                toolbar.sizeToFit()
+                self.EndDatePicker1 = UIDatePicker(frame:CGRect(x: 0, y: self.view.frame.size.height - 220, width:self.view.frame.size.width, height: 50))
+                self.EndDatePicker1.backgroundColor = UIColor.systemGray6
+                datePicker.datePickerMode = .date
+                let done=UIBarButtonItem(barButtonSystemItem: .done, target:nil, action:#selector(end))
+                toolbar.setItems([done], animated: false)
+                textField.inputAccessoryView=toolbar
+                textField.inputView=EndDatePicker1
+                textField.text = didselectEndDate
+                textField.placeholder = "Edit End Task Date"
+                EndDatePicker1.datePickerMode = .date
+                EndDateField1 = textField
+                }
+                    alert.addAction(action)
+            alert.addAction(cancel)
+                    present(alert, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Alert", message: "Fill All Fields", preferredStyle: UIAlertController.Style.alert)
+            let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+                }
+            alert.addAction(cancel)
+            present(alert, animated: true, completion: nil)
+        }
+
 
     }
     
