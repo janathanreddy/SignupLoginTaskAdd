@@ -1,0 +1,916 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		210DCE5E25E3C0E0005D4DF5 /* ExpandCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 210DCE5C25E3C0E0005D4DF5 /* ExpandCell.swift */; };
+		210DCE5F25E3C0E0005D4DF5 /* ExpandCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 210DCE5D25E3C0E0005D4DF5 /* ExpandCell.xib */; };
+		2115C9D425DBEAB100FC07C3 /* StockModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115C9D325DBEAB100FC07C3 /* StockModel.swift */; };
+		2115C9D925DBED4B00FC07C3 /* FeedModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2115C9D825DBED4B00FC07C3 /* FeedModel.swift */; };
+		21404E5E25E66FC5000FF253 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21404E5D25E66FC5000FF253 /* UserTableViewCell.swift */; };
+		21404E6325E67161000FF253 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21404E6225E67161000FF253 /* UserViewController.swift */; };
+		21446D6F25F1024800CFE87F /* Retrieve_1.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D5E25F1024600CFE87F /* Retrieve_1.php */; };
+		21446D7025F1024800CFE87F /* db.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D5F25F1024600CFE87F /* db.php */; };
+		21446D7125F1024800CFE87F /* Admin.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6025F1024600CFE87F /* Admin.php */; };
+		21446D7225F1024800CFE87F /* login.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6125F1024600CFE87F /* login.php */; };
+		21446D7325F1024800CFE87F /* Edit.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6225F1024600CFE87F /* Edit.php */; };
+		21446D7425F1024800CFE87F /* Pending.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6325F1024600CFE87F /* Pending.php */; };
+		21446D7525F1024800CFE87F /* Today.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6425F1024600CFE87F /* Today.php */; };
+		21446D7625F1024800CFE87F /* Tomorrow.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6525F1024700CFE87F /* Tomorrow.php */; };
+		21446D7725F1024800CFE87F /* update.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6625F1024700CFE87F /* update.php */; };
+		21446D7825F1024800CFE87F /* UserTasks.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6725F1024700CFE87F /* UserTasks.php */; };
+		21446D7925F1024800CFE87F /* Completed.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6825F1024700CFE87F /* Completed.php */; };
+		21446D7A25F1024800CFE87F /* delete.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6925F1024700CFE87F /* delete.php */; };
+		21446D7B25F1024800CFE87F /* past.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6A25F1024700CFE87F /* past.php */; };
+		21446D7C25F1024800CFE87F /* Task.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6B25F1024700CFE87F /* Task.php */; };
+		21446D7D25F1024800CFE87F /* login1.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6C25F1024800CFE87F /* login1.php */; };
+		21446D7E25F1024800CFE87F /* orgReg.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6D25F1024800CFE87F /* orgReg.php */; };
+		21446D7F25F1024800CFE87F /* v.php in Resources */ = {isa = PBXBuildFile; fileRef = 21446D6E25F1024800CFE87F /* v.php */; };
+		2169462025D6C2B5005D7BF5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169461F25D6C2B5005D7BF5 /* AppDelegate.swift */; };
+		2169462225D6C2B5005D7BF5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169462125D6C2B5005D7BF5 /* SceneDelegate.swift */; };
+		2169462425D6C2B5005D7BF5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169462325D6C2B5005D7BF5 /* ViewController.swift */; };
+		2169462725D6C2B5005D7BF5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2169462525D6C2B5005D7BF5 /* Main.storyboard */; };
+		2169462925D6C2B7005D7BF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2169462825D6C2B7005D7BF5 /* Assets.xcassets */; };
+		2169462C25D6C2B7005D7BF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2169462A25D6C2B7005D7BF5 /* LaunchScreen.storyboard */; };
+		2169463725D6C2B7005D7BF5 /* PhpConnectDbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169463625D6C2B7005D7BF5 /* PhpConnectDbTests.swift */; };
+		2169464225D6C2B7005D7BF5 /* PhpConnectDbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169464125D6C2B7005D7BF5 /* PhpConnectDbUITests.swift */; };
+		2169465325D6C2D1005D7BF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169465225D6C2D1005D7BF5 /* LoginViewController.swift */; };
+		2169465825D6C2E7005D7BF5 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169465725D6C2E7005D7BF5 /* TableViewCell.swift */; };
+		2169465D25D6C300005D7BF5 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2169465C25D6C300005D7BF5 /* TableViewController.swift */; };
+		2189B76525E52D8E00729635 /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2189B76425E52D8E00729635 /* PopUpViewController.swift */; };
+		2189B77825E53F6600729635 /* ChooseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2189B77725E53F6600729635 /* ChooseTableViewCell.swift */; };
+		21FC547B25E142A5001D5B03 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC547A25E142A5001D5B03 /* AdminViewController.swift */; };
+		21FC548125E142D9001D5B03 /* AdminTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC548025E142D9001D5B03 /* AdminTableViewCell.swift */; };
+		98F53A2D47193E583D749C71 /* Pods_PhpConnectDb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 937F7D2FC21378F3DD27E84B /* Pods_PhpConnectDb.framework */; };
+		9A2FC9F43EAC78BB50A86A96 /* Pods_PhpConnectDbTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B223C7EAB80254C13AF49A54 /* Pods_PhpConnectDbTests.framework */; };
+		C900DE3073446D1601FE540C /* Pods_PhpConnectDb_PhpConnectDbUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BB5F841E161E583BBA86957 /* Pods_PhpConnectDb_PhpConnectDbUITests.framework */; };
+		CF95DE9F25F5F3C500C6C2CA /* logout.php in Resources */ = {isa = PBXBuildFile; fileRef = CF95DE9E25F5F3C500C6C2CA /* logout.php */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2169463325D6C2B7005D7BF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2169461425D6C2B5005D7BF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2169461B25D6C2B5005D7BF5;
+			remoteInfo = PhpConnectDb;
+		};
+		2169463E25D6C2B7005D7BF5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2169461425D6C2B5005D7BF5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2169461B25D6C2B5005D7BF5;
+			remoteInfo = PhpConnectDb;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		210DCE5C25E3C0E0005D4DF5 /* ExpandCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandCell.swift; sourceTree = "<group>"; };
+		210DCE5D25E3C0E0005D4DF5 /* ExpandCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandCell.xib; sourceTree = "<group>"; };
+		2115C9D325DBEAB100FC07C3 /* StockModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockModel.swift; sourceTree = "<group>"; };
+		2115C9D825DBED4B00FC07C3 /* FeedModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedModel.swift; sourceTree = "<group>"; };
+		21404E5D25E66FC5000FF253 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		21404E6225E67161000FF253 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		21446D5E25F1024600CFE87F /* Retrieve_1.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Retrieve_1.php; sourceTree = "<group>"; };
+		21446D5F25F1024600CFE87F /* db.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = db.php; sourceTree = "<group>"; };
+		21446D6025F1024600CFE87F /* Admin.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Admin.php; sourceTree = "<group>"; };
+		21446D6125F1024600CFE87F /* login.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login.php; sourceTree = "<group>"; };
+		21446D6225F1024600CFE87F /* Edit.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Edit.php; sourceTree = "<group>"; };
+		21446D6325F1024600CFE87F /* Pending.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Pending.php; sourceTree = "<group>"; };
+		21446D6425F1024600CFE87F /* Today.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Today.php; sourceTree = "<group>"; };
+		21446D6525F1024700CFE87F /* Tomorrow.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Tomorrow.php; sourceTree = "<group>"; };
+		21446D6625F1024700CFE87F /* update.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = update.php; sourceTree = "<group>"; };
+		21446D6725F1024700CFE87F /* UserTasks.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = UserTasks.php; sourceTree = "<group>"; };
+		21446D6825F1024700CFE87F /* Completed.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Completed.php; sourceTree = "<group>"; };
+		21446D6925F1024700CFE87F /* delete.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = delete.php; sourceTree = "<group>"; };
+		21446D6A25F1024700CFE87F /* past.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = past.php; sourceTree = "<group>"; };
+		21446D6B25F1024700CFE87F /* Task.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = Task.php; sourceTree = "<group>"; };
+		21446D6C25F1024800CFE87F /* login1.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = login1.php; sourceTree = "<group>"; };
+		21446D6D25F1024800CFE87F /* orgReg.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = orgReg.php; sourceTree = "<group>"; };
+		21446D6E25F1024800CFE87F /* v.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = v.php; sourceTree = "<group>"; };
+		2169461C25D6C2B5005D7BF5 /* PhpConnectDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhpConnectDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2169461F25D6C2B5005D7BF5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2169462125D6C2B5005D7BF5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2169462325D6C2B5005D7BF5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2169462625D6C2B5005D7BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2169462825D6C2B7005D7BF5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2169462B25D6C2B7005D7BF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2169462D25D6C2B7005D7BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2169463225D6C2B7005D7BF5 /* PhpConnectDbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhpConnectDbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2169463625D6C2B7005D7BF5 /* PhpConnectDbTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhpConnectDbTests.swift; sourceTree = "<group>"; };
+		2169463825D6C2B7005D7BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2169463D25D6C2B7005D7BF5 /* PhpConnectDbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhpConnectDbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2169464125D6C2B7005D7BF5 /* PhpConnectDbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhpConnectDbUITests.swift; sourceTree = "<group>"; };
+		2169464325D6C2B7005D7BF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2169465225D6C2D1005D7BF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		2169465725D6C2E7005D7BF5 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		2169465C25D6C300005D7BF5 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		2189B76425E52D8E00729635 /* PopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		2189B77725E53F6600729635 /* ChooseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseTableViewCell.swift; sourceTree = "<group>"; };
+		21FC547A25E142A5001D5B03 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
+		21FC548025E142D9001D5B03 /* AdminTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminTableViewCell.swift; sourceTree = "<group>"; };
+		2263AE3BE3EE652366318DF6 /* Pods-PhpConnectDb.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDb.debug.xcconfig"; path = "Target Support Files/Pods-PhpConnectDb/Pods-PhpConnectDb.debug.xcconfig"; sourceTree = "<group>"; };
+		57E98ECCB4E380137C913196 /* Pods-PhpConnectDb-PhpConnectDbUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDb-PhpConnectDbUITests.release.xcconfig"; path = "Target Support Files/Pods-PhpConnectDb-PhpConnectDbUITests/Pods-PhpConnectDb-PhpConnectDbUITests.release.xcconfig"; sourceTree = "<group>"; };
+		58BCB4193B462B451680E62A /* Pods-PhpConnectDbTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDbTests.release.xcconfig"; path = "Target Support Files/Pods-PhpConnectDbTests/Pods-PhpConnectDbTests.release.xcconfig"; sourceTree = "<group>"; };
+		60C347AFBDD846351172B45F /* Pods-PhpConnectDb-PhpConnectDbUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDb-PhpConnectDbUITests.debug.xcconfig"; path = "Target Support Files/Pods-PhpConnectDb-PhpConnectDbUITests/Pods-PhpConnectDb-PhpConnectDbUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6BB5F841E161E583BBA86957 /* Pods_PhpConnectDb_PhpConnectDbUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhpConnectDb_PhpConnectDbUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		937F7D2FC21378F3DD27E84B /* Pods_PhpConnectDb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhpConnectDb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9B909B3B0134D144042EE53 /* Pods-PhpConnectDbTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDbTests.debug.xcconfig"; path = "Target Support Files/Pods-PhpConnectDbTests/Pods-PhpConnectDbTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0226699FFCC9D584A6E20E1 /* Pods-PhpConnectDb.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhpConnectDb.release.xcconfig"; path = "Target Support Files/Pods-PhpConnectDb/Pods-PhpConnectDb.release.xcconfig"; sourceTree = "<group>"; };
+		B223C7EAB80254C13AF49A54 /* Pods_PhpConnectDbTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhpConnectDbTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF95DE9E25F5F3C500C6C2CA /* logout.php */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.php; path = logout.php; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2169461925D6C2B5005D7BF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98F53A2D47193E583D749C71 /* Pods_PhpConnectDb.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169462F25D6C2B7005D7BF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9A2FC9F43EAC78BB50A86A96 /* Pods_PhpConnectDbTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169463A25D6C2B7005D7BF5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C900DE3073446D1601FE540C /* Pods_PhpConnectDb_PhpConnectDbUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		211F6D2925DE5E78004D03CB /* PHP File */ = {
+			isa = PBXGroup;
+			children = (
+				21446D6025F1024600CFE87F /* Admin.php */,
+				21446D6825F1024700CFE87F /* Completed.php */,
+				21446D5F25F1024600CFE87F /* db.php */,
+				21446D6925F1024700CFE87F /* delete.php */,
+				21446D6225F1024600CFE87F /* Edit.php */,
+				21446D6125F1024600CFE87F /* login.php */,
+				21446D6C25F1024800CFE87F /* login1.php */,
+				21446D6D25F1024800CFE87F /* orgReg.php */,
+				21446D6A25F1024700CFE87F /* past.php */,
+				21446D6325F1024600CFE87F /* Pending.php */,
+				CF95DE9E25F5F3C500C6C2CA /* logout.php */,
+				21446D5E25F1024600CFE87F /* Retrieve_1.php */,
+				21446D6B25F1024700CFE87F /* Task.php */,
+				21446D6425F1024600CFE87F /* Today.php */,
+				21446D6525F1024700CFE87F /* Tomorrow.php */,
+				21446D6625F1024700CFE87F /* update.php */,
+				21446D6725F1024700CFE87F /* UserTasks.php */,
+				21446D6E25F1024800CFE87F /* v.php */,
+			);
+			path = "PHP File";
+			sourceTree = "<group>";
+		};
+		211F6D3C25DE5EDC004D03CB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2169465225D6C2D1005D7BF5 /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		211F6D3D25DE5EED004D03CB /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				2169462325D6C2B5005D7BF5 /* ViewController.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		211F6D3E25DE5EFE004D03CB /* TaskView */ = {
+			isa = PBXGroup;
+			children = (
+				2115C9D825DBED4B00FC07C3 /* FeedModel.swift */,
+				2169465725D6C2E7005D7BF5 /* TableViewCell.swift */,
+				2169465C25D6C300005D7BF5 /* TableViewController.swift */,
+				2115C9D325DBEAB100FC07C3 /* StockModel.swift */,
+			);
+			path = TaskView;
+			sourceTree = "<group>";
+		};
+		2169461325D6C2B5005D7BF5 = {
+			isa = PBXGroup;
+			children = (
+				2169461E25D6C2B5005D7BF5 /* PhpConnectDb */,
+				2169463525D6C2B7005D7BF5 /* PhpConnectDbTests */,
+				2169464025D6C2B7005D7BF5 /* PhpConnectDbUITests */,
+				2169461D25D6C2B5005D7BF5 /* Products */,
+				9F71A51BC47627F60463E1EE /* Pods */,
+				430B57BC97A94E300D062D6C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		2169461D25D6C2B5005D7BF5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2169461C25D6C2B5005D7BF5 /* PhpConnectDb.app */,
+				2169463225D6C2B7005D7BF5 /* PhpConnectDbTests.xctest */,
+				2169463D25D6C2B7005D7BF5 /* PhpConnectDbUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2169461E25D6C2B5005D7BF5 /* PhpConnectDb */ = {
+			isa = PBXGroup;
+			children = (
+				21FC547F25E142AD001D5B03 /* Admin */,
+				211F6D3E25DE5EFE004D03CB /* TaskView */,
+				211F6D3D25DE5EED004D03CB /* Signup */,
+				211F6D3C25DE5EDC004D03CB /* Login */,
+				211F6D2925DE5E78004D03CB /* PHP File */,
+				2169461F25D6C2B5005D7BF5 /* AppDelegate.swift */,
+				2169462125D6C2B5005D7BF5 /* SceneDelegate.swift */,
+				2169462525D6C2B5005D7BF5 /* Main.storyboard */,
+				2169462825D6C2B7005D7BF5 /* Assets.xcassets */,
+				2169462A25D6C2B7005D7BF5 /* LaunchScreen.storyboard */,
+				2169462D25D6C2B7005D7BF5 /* Info.plist */,
+			);
+			path = PhpConnectDb;
+			sourceTree = "<group>";
+		};
+		2169463525D6C2B7005D7BF5 /* PhpConnectDbTests */ = {
+			isa = PBXGroup;
+			children = (
+				2169463625D6C2B7005D7BF5 /* PhpConnectDbTests.swift */,
+				2169463825D6C2B7005D7BF5 /* Info.plist */,
+			);
+			path = PhpConnectDbTests;
+			sourceTree = "<group>";
+		};
+		2169464025D6C2B7005D7BF5 /* PhpConnectDbUITests */ = {
+			isa = PBXGroup;
+			children = (
+				2169464125D6C2B7005D7BF5 /* PhpConnectDbUITests.swift */,
+				2169464325D6C2B7005D7BF5 /* Info.plist */,
+			);
+			path = PhpConnectDbUITests;
+			sourceTree = "<group>";
+		};
+		21FC547F25E142AD001D5B03 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				21FC547A25E142A5001D5B03 /* AdminViewController.swift */,
+				21FC548025E142D9001D5B03 /* AdminTableViewCell.swift */,
+				210DCE5C25E3C0E0005D4DF5 /* ExpandCell.swift */,
+				210DCE5D25E3C0E0005D4DF5 /* ExpandCell.xib */,
+				2189B76425E52D8E00729635 /* PopUpViewController.swift */,
+				2189B77725E53F6600729635 /* ChooseTableViewCell.swift */,
+				21404E6225E67161000FF253 /* UserViewController.swift */,
+				21404E5D25E66FC5000FF253 /* UserTableViewCell.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
+		430B57BC97A94E300D062D6C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				937F7D2FC21378F3DD27E84B /* Pods_PhpConnectDb.framework */,
+				6BB5F841E161E583BBA86957 /* Pods_PhpConnectDb_PhpConnectDbUITests.framework */,
+				B223C7EAB80254C13AF49A54 /* Pods_PhpConnectDbTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F71A51BC47627F60463E1EE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2263AE3BE3EE652366318DF6 /* Pods-PhpConnectDb.debug.xcconfig */,
+				B0226699FFCC9D584A6E20E1 /* Pods-PhpConnectDb.release.xcconfig */,
+				60C347AFBDD846351172B45F /* Pods-PhpConnectDb-PhpConnectDbUITests.debug.xcconfig */,
+				57E98ECCB4E380137C913196 /* Pods-PhpConnectDb-PhpConnectDbUITests.release.xcconfig */,
+				A9B909B3B0134D144042EE53 /* Pods-PhpConnectDbTests.debug.xcconfig */,
+				58BCB4193B462B451680E62A /* Pods-PhpConnectDbTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2169461B25D6C2B5005D7BF5 /* PhpConnectDb */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2169464625D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDb" */;
+			buildPhases = (
+				B421C0D79473E89F3293AFE4 /* [CP] Check Pods Manifest.lock */,
+				2169461825D6C2B5005D7BF5 /* Sources */,
+				2169461925D6C2B5005D7BF5 /* Frameworks */,
+				2169461A25D6C2B5005D7BF5 /* Resources */,
+				EF9C556272F8906D0D4ABC68 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PhpConnectDb;
+			productName = PhpConnectDb;
+			productReference = 2169461C25D6C2B5005D7BF5 /* PhpConnectDb.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2169463125D6C2B7005D7BF5 /* PhpConnectDbTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2169464925D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDbTests" */;
+			buildPhases = (
+				DAC8A09CC5A39DBAB4F987DF /* [CP] Check Pods Manifest.lock */,
+				2169462E25D6C2B7005D7BF5 /* Sources */,
+				2169462F25D6C2B7005D7BF5 /* Frameworks */,
+				2169463025D6C2B7005D7BF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2169463425D6C2B7005D7BF5 /* PBXTargetDependency */,
+			);
+			name = PhpConnectDbTests;
+			productName = PhpConnectDbTests;
+			productReference = 2169463225D6C2B7005D7BF5 /* PhpConnectDbTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2169463C25D6C2B7005D7BF5 /* PhpConnectDbUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2169464C25D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDbUITests" */;
+			buildPhases = (
+				1C2A5900DD6F0633AF7FE622 /* [CP] Check Pods Manifest.lock */,
+				2169463925D6C2B7005D7BF5 /* Sources */,
+				2169463A25D6C2B7005D7BF5 /* Frameworks */,
+				2169463B25D6C2B7005D7BF5 /* Resources */,
+				FEE2F82C3FE3F03D45C0BFB0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2169463F25D6C2B7005D7BF5 /* PBXTargetDependency */,
+			);
+			name = PhpConnectDbUITests;
+			productName = PhpConnectDbUITests;
+			productReference = 2169463D25D6C2B7005D7BF5 /* PhpConnectDbUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2169461425D6C2B5005D7BF5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					2169461B25D6C2B5005D7BF5 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+					2169463125D6C2B7005D7BF5 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 2169461B25D6C2B5005D7BF5;
+					};
+					2169463C25D6C2B7005D7BF5 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 2169461B25D6C2B5005D7BF5;
+					};
+				};
+			};
+			buildConfigurationList = 2169461725D6C2B5005D7BF5 /* Build configuration list for PBXProject "PhpConnectDb" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2169461325D6C2B5005D7BF5;
+			productRefGroup = 2169461D25D6C2B5005D7BF5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2169461B25D6C2B5005D7BF5 /* PhpConnectDb */,
+				2169463125D6C2B7005D7BF5 /* PhpConnectDbTests */,
+				2169463C25D6C2B7005D7BF5 /* PhpConnectDbUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2169461A25D6C2B5005D7BF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21446D7225F1024800CFE87F /* login.php in Resources */,
+				21446D7025F1024800CFE87F /* db.php in Resources */,
+				21446D7425F1024800CFE87F /* Pending.php in Resources */,
+				21446D7F25F1024800CFE87F /* v.php in Resources */,
+				21446D7C25F1024800CFE87F /* Task.php in Resources */,
+				21446D7A25F1024800CFE87F /* delete.php in Resources */,
+				21446D7625F1024800CFE87F /* Tomorrow.php in Resources */,
+				21446D7525F1024800CFE87F /* Today.php in Resources */,
+				2169462C25D6C2B7005D7BF5 /* LaunchScreen.storyboard in Resources */,
+				21446D7D25F1024800CFE87F /* login1.php in Resources */,
+				CF95DE9F25F5F3C500C6C2CA /* logout.php in Resources */,
+				21446D7325F1024800CFE87F /* Edit.php in Resources */,
+				2169462925D6C2B7005D7BF5 /* Assets.xcassets in Resources */,
+				210DCE5F25E3C0E0005D4DF5 /* ExpandCell.xib in Resources */,
+				21446D7725F1024800CFE87F /* update.php in Resources */,
+				21446D7925F1024800CFE87F /* Completed.php in Resources */,
+				2169462725D6C2B5005D7BF5 /* Main.storyboard in Resources */,
+				21446D7B25F1024800CFE87F /* past.php in Resources */,
+				21446D6F25F1024800CFE87F /* Retrieve_1.php in Resources */,
+				21446D7825F1024800CFE87F /* UserTasks.php in Resources */,
+				21446D7E25F1024800CFE87F /* orgReg.php in Resources */,
+				21446D7125F1024800CFE87F /* Admin.php in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169463025D6C2B7005D7BF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169463B25D6C2B7005D7BF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C2A5900DD6F0633AF7FE622 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhpConnectDb-PhpConnectDbUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B421C0D79473E89F3293AFE4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhpConnectDb-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DAC8A09CC5A39DBAB4F987DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PhpConnectDbTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF9C556272F8906D0D4ABC68 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb/Pods-PhpConnectDb-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb/Pods-PhpConnectDb-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb/Pods-PhpConnectDb-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FEE2F82C3FE3F03D45C0BFB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb-PhpConnectDbUITests/Pods-PhpConnectDb-PhpConnectDbUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb-PhpConnectDbUITests/Pods-PhpConnectDb-PhpConnectDbUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PhpConnectDb-PhpConnectDbUITests/Pods-PhpConnectDb-PhpConnectDbUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2169461825D6C2B5005D7BF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21FC547B25E142A5001D5B03 /* AdminViewController.swift in Sources */,
+				21404E6325E67161000FF253 /* UserViewController.swift in Sources */,
+				2169465825D6C2E7005D7BF5 /* TableViewCell.swift in Sources */,
+				21404E5E25E66FC5000FF253 /* UserTableViewCell.swift in Sources */,
+				2169465D25D6C300005D7BF5 /* TableViewController.swift in Sources */,
+				2115C9D425DBEAB100FC07C3 /* StockModel.swift in Sources */,
+				2169465325D6C2D1005D7BF5 /* LoginViewController.swift in Sources */,
+				21FC548125E142D9001D5B03 /* AdminTableViewCell.swift in Sources */,
+				2169462425D6C2B5005D7BF5 /* ViewController.swift in Sources */,
+				2189B76525E52D8E00729635 /* PopUpViewController.swift in Sources */,
+				2169462025D6C2B5005D7BF5 /* AppDelegate.swift in Sources */,
+				2189B77825E53F6600729635 /* ChooseTableViewCell.swift in Sources */,
+				210DCE5E25E3C0E0005D4DF5 /* ExpandCell.swift in Sources */,
+				2169462225D6C2B5005D7BF5 /* SceneDelegate.swift in Sources */,
+				2115C9D925DBED4B00FC07C3 /* FeedModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169462E25D6C2B7005D7BF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2169463725D6C2B7005D7BF5 /* PhpConnectDbTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2169463925D6C2B7005D7BF5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2169464225D6C2B7005D7BF5 /* PhpConnectDbUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2169463425D6C2B7005D7BF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2169461B25D6C2B5005D7BF5 /* PhpConnectDb */;
+			targetProxy = 2169463325D6C2B7005D7BF5 /* PBXContainerItemProxy */;
+		};
+		2169463F25D6C2B7005D7BF5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2169461B25D6C2B5005D7BF5 /* PhpConnectDb */;
+			targetProxy = 2169463E25D6C2B7005D7BF5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2169462525D6C2B5005D7BF5 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2169462625D6C2B5005D7BF5 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2169462A25D6C2B7005D7BF5 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2169462B25D6C2B7005D7BF5 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2169464425D6C2B7005D7BF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2169464525D6C2B7005D7BF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2169464725D6C2B7005D7BF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2263AE3BE3EE652366318DF6 /* Pods-PhpConnectDb.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDb";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2169464825D6C2B7005D7BF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0226699FFCC9D584A6E20E1 /* Pods-PhpConnectDb.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDb/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDb";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2169464A25D6C2B7005D7BF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A9B909B3B0134D144042EE53 /* Pods-PhpConnectDbTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhpConnectDb.app/PhpConnectDb";
+			};
+			name = Debug;
+		};
+		2169464B25D6C2B7005D7BF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 58BCB4193B462B451680E62A /* Pods-PhpConnectDbTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDbTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDbTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PhpConnectDb.app/PhpConnectDb";
+			};
+			name = Release;
+		};
+		2169464D25D6C2B7005D7BF5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 60C347AFBDD846351172B45F /* Pods-PhpConnectDb-PhpConnectDbUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhpConnectDb;
+			};
+			name = Debug;
+		};
+		2169464E25D6C2B7005D7BF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57E98ECCB4E380137C913196 /* Pods-PhpConnectDb-PhpConnectDbUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = GL92UNQ3FG;
+				INFOPLIST_FILE = PhpConnectDbUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "JANTEL-CORP.PhpConnectDbUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PhpConnectDb;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2169461725D6C2B5005D7BF5 /* Build configuration list for PBXProject "PhpConnectDb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2169464425D6C2B7005D7BF5 /* Debug */,
+				2169464525D6C2B7005D7BF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2169464625D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDb" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2169464725D6C2B7005D7BF5 /* Debug */,
+				2169464825D6C2B7005D7BF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2169464925D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDbTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2169464A25D6C2B7005D7BF5 /* Debug */,
+				2169464B25D6C2B7005D7BF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2169464C25D6C2B7005D7BF5 /* Build configuration list for PBXNativeTarget "PhpConnectDbUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2169464D25D6C2B7005D7BF5 /* Debug */,
+				2169464E25D6C2B7005D7BF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2169461425D6C2B5005D7BF5 /* Project object */;
+}
