@@ -532,8 +532,9 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         didselectStartDate = "\(Update[indexPath.row].Start_Date as! String)"
         didselectEndDate = "\(Update[indexPath.row].End_Date as! String)"
         print("UpdateFunction \(Int16(Update[indexPath.row].Id as! String) as! Int16)")
+
         if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
-            
+
                 let alert = UIAlertController(title: "Edit", message: "", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "update", style: UIAlertAction.Style.default) { [self](action) in
                     let alertController = UIAlertController(title: "Edit", message: "Updation Done", preferredStyle: UIAlertController.Style.alert)
@@ -545,6 +546,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     request.httpMethod = "POST"
                     let postString = "username=\(mail_Add as! String)&TaskName=\(textField.text as! String)&TaskStatus=\(Update[indexPath.row].TaskStatus as! String)&Id=\(Int16(Update[indexPath.row].Id as! String) as! Int16)&date=\(StartDateField1.text!)&End_Date=\(EndDateField1.text!)"
                     print("postString : \(postString)")
+                    Update.removeAll()
 
                     request.httpBody = postString.data(using: String.Encoding.utf8)
 
@@ -558,12 +560,12 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                         print("response = \(String(describing: response))")
                         let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                         print("responseString = \(String(describing: responseString))")
+                        downloadItems()
+
                     }
                     task.resume()
                     
                     self.present(alertController, animated: true, completion: nil)
-                    Update.removeAll()
-                    downloadItems()
                     tableView.reloadData()
                     }
                 let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
