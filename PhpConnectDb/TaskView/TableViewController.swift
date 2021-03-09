@@ -72,38 +72,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         let TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
         tableView.rowHeight = 106
-//        if searching{
-//            TableViewCell.Task1.text = searchedname[indexPath.row].TaskName
-//            TableViewCell.Button.tag = indexPath.row
-//            TableViewCell.Edit.tag = indexPath.row
-//            TableViewCell.Button.addTarget(self, action: #selector(CellButton(sender:)), for:.touchUpInside )
-//            TableViewCell.Edit.addTarget(self, action: #selector(EditButton(sender:)), for:.touchUpInside )
-//            TableViewCell.StartDate.text = searchedname[indexPath.row].Start_Date
-//            TableViewCell.EndDate.text = searchedname[indexPath.row].End_Date
-//
-//            var ConvertValue = Int(searchedname[indexPath.row].Remain_Days ?? "")
-//            if ConvertValue ?? 0 > 0 && searchedname[indexPath.row].TaskStatus == "Pending"{
-//                TableViewCell.RemainDays.text = "\(searchedname[indexPath.row].Remain_Days as! String) Days More"
-//                TableViewCell.RemainDays.textColor = UIColor.black
-//            }else if ConvertValue ?? 0 < 0 && searchedname[indexPath.row].TaskStatus == "Pending"{
-//                TableViewCell.RemainDays.text = "Task Date Exceeded \((searchedname[indexPath.row].Remain_Days) as! String)"
-//                TableViewCell.RemainDays.textColor = UIColor.systemRed
-//            }else if ConvertValue ?? 0 == 0 && searchedname[indexPath.row].TaskStatus == "Pending"{
-//                TableViewCell.RemainDays.text = "Today Last Date "
-//                TableViewCell.RemainDays.textColor = UIColor.black
-//
-//            }else if ConvertValue ?? 0 > 0 || ConvertValue ?? 0 == 0 || ConvertValue ?? 0 < 0 && searchedname[indexPath.row].TaskStatus == "Completed"{
-//                TableViewCell.RemainDays.text = "Task Completed"
-//                TableViewCell.RemainDays.textColor = UIColor.systemGreen
-//            }
-//
-//            if searchedname[indexPath.row].TaskStatus == "Pending"{
-//                TableViewCell.Button.setImage(#imageLiteral(resourceName: "check off"), for: .normal)
-//            }else{
-//                TableViewCell.Button.setImage(#imageLiteral(resourceName: "check on"), for: .normal)
-//            }
-//            return TableViewCell
-//        }else{
+
             TableViewCell.Task1.text = Update[indexPath.row].TaskName
             TableViewCell.Button.tag = indexPath.row
             TableViewCell.Edit.tag = indexPath.row
@@ -134,14 +103,11 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 TableViewCell.Button.setImage(#imageLiteral(resourceName: "check on"), for: .normal)
             }
             return TableViewCell
-//        }
-//
-//        return UITableViewCell()
 
     }
     
     @IBAction func Add(_ sender: Any) {
-
+        searchedname.removeAll()
         Update.removeAll()
         var textField = UITextField()
         if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
@@ -404,6 +370,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                     print("responseString = \(String(describing: responseString))")
                     print("Checked Selected")
+                    
                 }
                 task.resume()
              }
