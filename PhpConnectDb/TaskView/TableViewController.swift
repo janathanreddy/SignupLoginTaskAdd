@@ -53,18 +53,15 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         self.present(alertController,animated:true,completion:{Timer.scheduledTimer(withTimeInterval: 0.5, repeats:false, block: {_ in
             self.dismiss(animated: true, completion: nil)
         })})
-      
-      
     }
     
-   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Update.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let TableViewCell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
-        tableView.rowHeight = 104
+        tableView.rowHeight = 120
         TableViewCell.Task1.text = Update[indexPath.row].TaskName
         TableViewCell.Button.tag = indexPath.row
         TableViewCell.Edit.tag = indexPath.row
