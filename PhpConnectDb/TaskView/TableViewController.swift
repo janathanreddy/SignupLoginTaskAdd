@@ -349,6 +349,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                     print("responseString = \(String(describing: responseString))")
                     print("Checked Deselected")
+                    self.refreshpage()
                 }
                 task.resume()
             }else{
@@ -370,7 +371,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                     let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
                     print("responseString = \(String(describing: responseString))")
                     print("Checked Selected")
-                    
+                    self.refreshpage()
                 }
                 task.resume()
              }
@@ -734,7 +735,11 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         downloadItems()
         tableView.reloadData()
     }
-    
+    func refreshpage(){
+        searchedname.removeAll()
+        Update.removeAll()
+        downloadItems()
+    }
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         SearchName.resignFirstResponder()
     }
