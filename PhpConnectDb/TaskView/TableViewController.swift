@@ -41,7 +41,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     var searching = false
     var searchedname = [UpdateData]()
     var DidSelectAppoint = [DidSelectAppoinment]()
-    
+    var dateString:String?
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
@@ -51,7 +51,8 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         View1.layer.masksToBounds = true
         SearchName.delegate = self
         downloadItems()
-        }
+        remainder()
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         let alertController = UIAlertController(title:"Welcome",message:Username,preferredStyle:.alert)
@@ -61,11 +62,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        if searching {
-//            return searchedname.count
-//        } else {
             return Update.count
-//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -107,45 +104,54 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
     }
     
     @IBAction func Add(_ sender: Any) {
-        searchedname.removeAll()
-        Update.removeAll()
+       
         var textField = UITextField()
-        if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
+      
                 let alert = UIAlertController(title: "Add your Task", message: "", preferredStyle: UIAlertController.Style.alert)
                 let action = UIAlertAction(title: "Add", style: UIAlertAction.Style.default) { [self](action) in
                     let alertController = UIAlertController(title: "Task", message: "Task Added", preferredStyle: UIAlertController.Style.alert)
                     alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default,handler: nil))
                     // namo link sever "http://con.test:8888/Task.php"
-                    
-                    let request = NSMutableURLRequest(url: NSURL(string: "https://appstudio.co/iOS/Task.php")! as URL)
-                    request.httpMethod = "POST"
-                    
-                    let postString = "username=\(mail_Add as! String)&TaskName=\(textField.text!)&TaskStatus=Pending&date=\(StartDateField.text!)&End_Date=\(EndDateField.text!)"
+                    if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty != true && StartDateField.text!.trimmingCharacters(in: .whitespaces).isEmpty != true && EndDateField.text!.trimmingCharacters(in: .whitespaces).isEmpty != true {
+                        let request = NSMutableURLRequest(url: NSURL(string: "https://appstudio.co/iOS/Task.php")! as URL)
+                        request.httpMethod = "POST"
+                        
+                        let postString = "username=\(mail_Add as! String)&TaskName=\(textField.text!)&TaskStatus=Pending&date=\(StartDateField.text!)&End_Date=\(EndDateField.text!)"
 
-                    print("postString : \(postString)")
+                        print("postString : \(postString)")
 
-                    request.httpBody = postString.data(using: String.Encoding.utf8)
+                        request.httpBody = postString.data(using: String.Encoding.utf8)
+                        Update.removeAll()
+                        searchedname.removeAll()
+                        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+                            data, response, error in
 
-                    let task = URLSession.shared.dataTask(with: request as URLRequest) {
-                        data, response, error in
-
-                        if error != nil {
-                            print("error=\(String(describing: error))")
-                            return
+                            if error != nil {
+                                print("error=\(String(describing: error))")
+                                return
+                            }
+                            print("response = \(String(describing: response))")
+                            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+                            print("responseString = \(String(describing: responseString))")
+                            downloadItems()
                         }
-                        print("response = \(String(describing: response))")
-                        let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-                        print("responseString = \(String(describing: responseString))")
-                        downloadItems()
+                        task.resume()
+                        
+    //                   Update.append(UpdateData(TaskName: textField.text, TaskStatus: "Pending", Start_Date: StartDateField.text,End_Date: EndDateField.text))
+                        self.present(alertController, animated: true, completion: nil)
+                        tableView.reloadData()
+                    }else{
+                        let alert = UIAlertController(title: "Alert", message: "Fill All Fields", preferredStyle: UIAlertController.Style.alert)
+                        let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
+                            }
+                        alert.addAction(cancel)
+                        present(alert, animated: true, completion: nil)
                     }
-                    task.resume()
-                    
-//                   Update.append(UpdateData(TaskName: textField.text, TaskStatus: "Pending", Start_Date: StartDateField.text,End_Date: EndDateField.text))
-                    self.present(alertController, animated: true, completion: nil)
-                    tableView.reloadData()
+           
 
                     }
-                let cancel = UIAlertAction(title: "Cancel", style: .cancel) { (action) -> Void in
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel) { [self](action) ->
+                    Void in
                     }
                     alert.addTextField { (alertTextField) in
                       alertTextField.placeholder = "Create new task"
@@ -185,13 +191,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 alert.addAction(action)
                 alert.addAction(cancel)
                 present(alert, animated: true, completion: nil)
-        }else{
-            let alert = UIAlertController(title: "Alert", message: "Fill All Fields", preferredStyle: UIAlertController.Style.alert)
-            let cancel = UIAlertAction(title: "Ok", style: .cancel) { (action) -> Void in
-                }
-            alert.addAction(cancel)
-            present(alert, animated: true, completion: nil)
-        }
+        
         
     }
     
@@ -472,6 +472,8 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
                 let stock = StockModel()
                 //the following insures none of the JsonElement values are nil through optional binding
                 print("jsonElement \(jsonElement["Id"] as? String) : \(jsonElement["Taskname"] as? String) :  \(jsonElement["TaskStatus"] as? String) : ")
+                
+                
                 if let TaskName = jsonElement["Taskname"] as? String,
                    let TaskStatus = jsonElement["TaskStatus"] as? String,
                    let Id = jsonElement["Id"] as? String,
@@ -536,7 +538,6 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
             didselect = "\(Update[indexPath.row].TaskName as! String)"
             didselectStartDate = "\(Update[indexPath.row].Start_Date as! String)"
             didselectEndDate = "\(Update[indexPath.row].End_Date as! String)"
-            print("UpdateFunction \(Int16(Update[indexPath.row].Id as! String) as! Int16)")
 
             if   textField.text!.trimmingCharacters(in: .whitespaces).isEmpty{
 
@@ -665,6 +666,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         buttonAction?.removeAll()
         urlpath?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         buttonAction = "AllTasks"
         urlpath = "https://appstudio.co/iOS/Retrieve_1.php"
         View1.isHidden = true
@@ -677,6 +679,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         buttonAction?.removeAll()
         urlpath?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         buttonAction = "Completed"
         urlpath = "https://appstudio.co/iOS/Completed.php"
         View1.isHidden = true
@@ -688,6 +691,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         buttonAction?.removeAll()
         urlpath?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         buttonAction = "Pending"
         urlpath = "https://appstudio.co/iOS/Pending.php"
         View1.isHidden = true
@@ -699,6 +703,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         urlpath?.removeAll()
         buttonAction?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         urlpath = "https://appstudio.co/iOS/Today.php"
         buttonAction = "Today"
         View1.isHidden = true
@@ -710,6 +715,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         buttonAction?.removeAll()
         urlpath?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         urlpath = "https://appstudio.co/iOS/past.php"
         buttonAction = "Past"
         View1.isHidden = true
@@ -721,6 +727,7 @@ class TableViewController: UIViewController,UITableViewDelegate,UITableViewDataS
         buttonAction?.removeAll()
         urlpath?.removeAll()
         Update.removeAll()
+        searchedname.removeAll()
         urlpath = "https://appstudio.co/iOS/Tomorrow.php"
         buttonAction = "Tomorrow"
         View1.isHidden = true
@@ -759,6 +766,21 @@ extension TableViewController: UISearchBarDelegate {
         SearchName.showsCancelButton = false
         SearchName.isHidden = true
         tableView.reloadData()
+    }
+    
+    func remainder(){
+        
+        print("dateString : \(dateString)")
+        let Content = UNMutableNotificationContent()
+          Content.title = "Alert!"
+          Content.subtitle = "Task remaninder"
+          Content.body = "Pls check today's task, its a last day!!"
+          let Trigger = UNTimeIntervalNotificationTrigger(timeInterval: 10, repeats: false)
+          let RequestIdentifier = "check"
+          let request = UNNotificationRequest(identifier: RequestIdentifier, content: Content, trigger: Trigger)
+          UNUserNotificationCenter.current().add(request) { (error) in
+                print(error as Any)
+          }
     }
 }
 struct UpdateData {
